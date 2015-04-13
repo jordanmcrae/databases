@@ -1,0 +1,23 @@
+<h1>All Contacts</h1>
+
+<ul>
+
+<% @contacts.each do |contact| %>
+  <li><%= contact.first_name %> <%= contact.last_name %> <%= contact.email %> <%= contact.note %></li>
+    <a href="/contacts/<%= contact.id %>" class="viewbutton">View</a>
+
+    <form action="/contacts/<%= contact.id %>" method="get">
+
+    </form>
+
+    <a href="/contacts/<%= contact.id %>/edit" class="editbutton">Edit</a>
+
+    <form action="/contacts/<%= contact.id %>" method="post">
+
+      <input type="hidden" name="_method" value="put">
+
+    </form>
+
+<% end %>
+
+</ul>
